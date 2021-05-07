@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -13,7 +14,7 @@ class PostApiController extends Controller
      */
     public function index(): JsonResponse
     {
-        return \response()->json('@todo: implement index method');
+        return \response()->json(Post::all());
     }
 
     /**
