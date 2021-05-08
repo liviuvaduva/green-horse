@@ -10,8 +10,14 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+//</editor-fold>
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js(
+    [
+        'resources/js/app.js',
+        'resources/js/green-horse/green-horse.js'
+    ], 'public/js')
+    .css('node_modules/bootstrap/dist/css/bootstrap.css', 'public/css/app.css')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
